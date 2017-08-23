@@ -41,15 +41,54 @@ Now that we have some basic query examples.  Let's try doing some more complicat
 Use [www.sqlteaching.com](http://www.sqlteaching.com/) or [sqlbolt.com](http://sqlbolt.com/) as resources for the missing keywords you'll need.
 
 1. Find the average length of all tracks in Milliseconds
+SELECT AVG (Milliseconds)
+FROM Track;
+
 2. Find the number of invoices in the USA
+SELECT *
+FROM Invoice
+WHERE BillingCountry = 'USA';
+
 3. Make a list of all the First Names of Customers that contain an 'a'
+SELECT *
+FROM Customer
+WHERE FirstName Like '%a%';
+
 4. Make a list of the 10 longest tracks
+SELECT *
+FROM Track
+ORDER BY Milliseconds DESC
+LIMIT 10;
+
 5. Make a list of the 20 shortest tracks
+SELECT *
+FROM Track
+ORDER BY Milliseconds ASC
+LIMIT 20;
+
 6. Find all the customers that live in California or Washington
+SELECT *
+FROM Customer
+WHERE State IN ('CA', 'WA');
+
 7. Find all the customers that live in California, Washington, Utah, Florida, or Arizona (Use IN keyword)
+SELECT *
+FROM Customer
+WHERE STATE IN ('CA', 'WA', 'UT', 'FL', 'AZ');
+
 8. Insert an artist to the database
+INSERT INTO Artist (Name)
+VALUES ('Lydia');
+
 9. Insert yourself as a customer to the database
+INSET INTO Customer (FirstName, LastName, Company, Provo, State, Country, Email)
+VALUES ('Shawn', 'Koga', 'DevMountain', 'Provo', 'UT', 'USA', 'askfel@alskfe.com';)
+
 10. Find a list of all Playlists that start with `Classical` 
+SELECT *
+FROM Playlists
+WHERE Name LIKE 'Classical%'
+
 11. You can either continue exploring this dataset or look into setting up postgres on your local machine.
 
 
